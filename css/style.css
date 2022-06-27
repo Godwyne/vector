@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+:root {
+    --box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+    --body: #888;
+    --gray: #adb5bd;
+    --primary: #0d6efd;
+}
+
+html, body{
+    line-height: 1.7;
+    color: var(--body);
+    scroll-behavior: smooth;
+}
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.text-title{
+    color: #ab0f0a;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+header {
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    transition: 0.6s;
+}
+header.sticky{
+    padding: 2px 50px;
+    background: #fff;
+}
+header.sticky .navbar-brand,
+header.sticky .navbar a
+{
+    color: #000;
+}
+.navbar .nav-link {
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.6s;
+}
+.hero{
+    background-image: url(../img/mic\ 1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    font-family: 'Sora', sans-serif;
+    line-height: 1.7;
+    z-index: 2;
+}
+.hero::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(21, 20, 51, 0.5);
+    z-index: -1;
+}
+.hero h1{
+    font-weight: 700;
+}
+.btn {
+    padding: 10px;
+    border-width: 1px;
+    border-radius: 0;
+}
+
+.pacifico{
+    font-family: 'Pacifico', cursive;
+}
+.card-effect {
+    box-shadow: var(--box-shadow);
+    background-color: #fff;
+    border: 2px solid #fff;
+    padding: 25px;
+    transition: all 0.35s ease;
+}
+.card-effect:hover {
+    box-shadow: none;
+    transform: translateY(5px);
+}
+.iconbox {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray);
+    color: #fff;
+    font-size: 32px;
+    border-radius: 100px;
+}
+
+.service {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+.service::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background-color: var(--gray);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.service:hover .iconbox{
+    background-color: #fff;
+    color: var(--gray);
+}
+.service:hover h5,
+.service:hover p{
+    color: #fff;
+}
+.service:hover::after{
+    opacity: 1;
+    top: 0;
+}
+
+.cardimage{
+    height: 120px;
+}
+p.btn{
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.project{
+    position: relative;
+    overflow: hidden;
+}
+.project .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(21, 20, 51, 0.5);
+    padding: 30px;
+    display: flex;
+    align-items: flex-end;
+    transition: all 0.4s ease;
+    opacity: 0;
+}
+.project img{
+    transition: all 0.4s ease;
+}
+.project:hover .overlay{
+    opacity: 1;
+}
+.project:hover img{
+    transform: scale(1.1);
+}
+
+.pricing i{
+    font-size: 20px;
+    color: #2c2c2c;
+}
+.pricing ul li{
+    margin-top: 8px;
+}
+
+form .form-control{
+    border-radius: 0;
+}
+
+.footer-top{
+    padding: 90px;
+}
